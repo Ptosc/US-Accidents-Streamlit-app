@@ -1,23 +1,20 @@
 import streamlit as st
-
 import matplotlib.pyplot as plt
-
 import plots
 from plots import hour_of_day
 from data import load_data
 
 df = load_data()
 
-st.header('US-Unfälle Datenanalyse')
+st.header('📊 US-Unfälle Datenanalyse')
 
-
-
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "Übersicht",
     "Wetter",
-    "Timing",
+    "Tageszeit",
     "Regionen",
-    "Verkehrsobjekte"
+    "Verkehrsobjekte",
+    "Heatmap"
 ])
 
 with tab1:
@@ -44,3 +41,6 @@ with tab4:
 
 with tab5:
     plots.traffic_features(df)
+
+with tab6:
+    plots.heatmap(df)

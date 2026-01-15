@@ -8,10 +8,8 @@ from streamlit_folium import st_folium
 import plotly.express as px
 
 
-def heatmap():
-    st.markdown('# 🗺️ USA Unfall-Heatmap')
-
-    df = data.load_data()
+def heatmap(df):
+    st.markdown('# 🗺️ Interaktive USA Unfall-Heatmap')
 
     MAX_POINTS = 5000
     df_good = df.loc[~df["Start_Lat"].isna(), ["Start_Lat", "Start_Lng"]]
