@@ -1,4 +1,3 @@
-import data
 import folium as f
 from folium.plugins import FastMarkerCluster
 import matplotlib.pyplot as plt

@@ -1,4 +1,5 @@
-kaggle
+
+kagglehub 
 streamlit
 matplotlib
 folium
