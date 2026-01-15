@@ -1,0 +1,7 @@
+kaggle
+streamlit
+matplotlib
+folium
+pandas
+streamlit-folium
+plotly
