@@ -8,7 +8,7 @@ import plotly.express as px
 
 
 def heatmap(df):
-    st.markdown('# 🗺️ Interaktive USA Unfall-Heatmap')
+    st.markdown('# 🗺️ Interaktive Karte')
 
     MAX_POINTS = 5000
     df_good = df.loc[~df["Start_Lat"].isna(), ["Start_Lat", "Start_Lng"]]

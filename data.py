@@ -1,35 +1,10 @@
 import streamlit as st
-import kagglehub
-from kagglehub import KaggleDatasetAdapter
+import pandas as pd
 
 @st.cache_data
 def load_data():
-    file_path = "US_Accidents_March23.csv"
-
-    df = kagglehub.load_dataset(
-        KaggleDatasetAdapter.PANDAS,
-        "sobhanmoosavi/us-accidents",
-        file_path,
-        # Spalten filtern
-        pandas_kwargs={
-            "usecols": [
-                "ID",
-                "Severity",
-                "Start_Time",
-                "State",
-                "City",
-                "Weather_Condition",
-                "Start_Lat",
-                "Start_Lng",
-                "Temperature(F)",
-                "Visibility(mi)",
-                "Crossing",
-                "Junction",
-                "Traffic_Signal"
-            ]
-        }
-    )
-
+    df = pd.read_csv("data/us_accidents_prepared.csv", parse_dates=["Start_Time"])
+    
     # State-Abkürzungen zu vollen Namen mappen
     us_state_to_abbrev = {
         "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California",
