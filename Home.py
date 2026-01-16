@@ -4,6 +4,11 @@ import plots
 from plots import hour_of_day
 from data import load_data
 
+st.set_page_config(
+    page_title='🚘 Analyse', 
+    layout='centered',
+    )
+
 df = load_data()
 
 st.header('📊 US-Unfälle Datenanalyse')
